@@ -1,7 +1,6 @@
 import org.example.Yams;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,12 +26,25 @@ public class YamsTest {
     }
 
     @Test
-    public  void testRollDiceValues2() {
+    public  void testRollDiceValuesNoPattern() {
         Yams yams = new Yams();
         Integer dice = yams.diceValue(Map.of(1, 3, 2, 2, 3, 1, 4, 1, 5, 1, 6, 1));
         assertEquals(9, dice);
         }
-    }
+
+
+    @Test
+    public void testRollDiceValuesBrelan() {
+        Yams yams = new Yams();
+        Integer dice = yams.diceValue(Map.of(
+                1, 3,
+                2, 1,
+                3, 1,
+                4, 1));
+        assertEquals(28, dice);
+        }
+}
+
 
 
 
