@@ -15,6 +15,8 @@ public class Yams {
         "YAMS", 50
     );
 
+
+
     public List<Map<Integer,Integer>> rollDiceXTimes(int nbRoll) {
         List<Map<Integer, Integer>> dice = new ArrayList<>();
         for (int i = 0; i < nbRoll; i++) {
@@ -37,14 +39,19 @@ public class Yams {
         return  dice;
     }
 
-    public Integer calculateScore(Map<Integer, Integer> dice) {
-        return extractPattern(dice);
+    public Integer calculateScore(List<Map<Integer, Integer>> dices) {
+        Integer score = 0;
+        dices.stream().forEach(dice -> {
+            score += extractPattern(dice);
+        });
+        return score;
     }
 
     public Integer extractPattern(Map<Integer, Integer> dice) {
         Integer sum = 0;
 
         if (dice.containsValue(2) && dice.containsValue(3)) {
+
             return POSSIBLE_COMBINATIONS.get("FULL");
         }
         if (dice.containsValue(3)) {
@@ -66,5 +73,6 @@ public class Yams {
         }
     }
 
+    public void isCombinationTaken()
 
 }

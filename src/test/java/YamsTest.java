@@ -1,6 +1,7 @@
 import org.example.Yams;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -102,6 +103,7 @@ public class YamsTest {
     @Test
     public void calcualteDiceValuesWithoutPatternRepetition() {
         Yams yams = new Yams();
+        List<String> combinations = new ArrayList<>();
         List<Map<Integer, Integer>> dice = List.of(Map.of(
                 1, 3,
                 3, 1,
@@ -110,6 +112,8 @@ public class YamsTest {
                 1, 3,
                 3, 2)
         );
+
+
 
 
 
