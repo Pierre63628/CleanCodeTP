@@ -26,7 +26,13 @@ public class YamsTest {
         }
     }
 
+    @Test
+    public  void testRollDiceValues2() {
+        Yams yams = new Yams();
+        Integer dice = yams.diceValue(List.of(1, 2, 3, 4, 5));
+        assertEquals(15, dice);
+        }
+    }
 
 
 
-}
