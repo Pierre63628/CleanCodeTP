@@ -28,8 +28,13 @@ public class YamsTest {
     @Test
     public  void testRollDiceValuesNoPattern() {
         Yams yams = new Yams();
-        Integer dice = yams.diceValue(Map.of(1, 3, 2, 2, 3, 1, 4, 1, 5, 1, 6, 1));
-        assertEquals(9, dice);
+        Integer dice = yams.diceValue(Map.of(
+                1, 1,
+                2, 1,
+                3, 2,
+                5, 1,
+                6, 1));
+        assertEquals(17, dice);
         }
 
 

@@ -38,20 +38,14 @@ public class Yams {
         if (dice.containsValue(4)) {
             return POSSIBLE_COMBINATIONS.get("CARRE");
         }
-        if (dice.size() == 5) {
-            return POSSIBLE_COMBINATIONS.get("GRANDE_SUITE");
-        }
         if (dice.containsValue(5)) {
             return POSSIBLE_COMBINATIONS.get("YAMS");
-        }
-
-        if (dice.size() == 6) {
+        }else {
             for (Map.Entry<Integer, Integer> entry : dice.entrySet()) {
-                sum += entry.getValue();
+                sum += entry.getKey();
             }
             return sum;
         }
-        return 0;
-    }
 
+}
 }
