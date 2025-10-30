@@ -43,6 +43,17 @@ public class YamsTest {
                 4, 1));
         assertEquals(28, dice);
         }
+
+
+     @Test
+    public void testRollDiceValuesCarre() {
+        Yams yams = new Yams();
+        Integer dice = yams.diceValue(Map.of(
+                1, 4,
+                2, 1));
+        assertEquals(35, dice);
+        }
+
 }
 
 

@@ -35,6 +35,8 @@ public class Yams {
             return sum;
         }if(dice.containsValue(3)){
             return POSSIBLE_COMBINATIONS.get("BRELAN");
+        }if (dice.containsValue(4)){
+            return POSSIBLE_COMBINATIONS.get("CARRE");
         }
 
         return 0;
