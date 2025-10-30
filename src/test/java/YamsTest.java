@@ -13,11 +13,8 @@ public class YamsTest {
     @Test
     public void shouldReturnValidDiceCountWhenRollingMultipleTimes() {
         Yams yams = new Yams();
-        List<Map<Integer, Integer>> dice = yams.rollDice(3);
-
-        assertThat(dice.size())
-                .as("Dice count should be between 1 and 5")
-                .isBetween(1, 5);
+        List<Map<Integer, Integer>> dice = yams.rollDiceXTimes(3);
+        assertThat(dice.size()).isEqualTo(3);
     }
 
 
@@ -101,6 +98,28 @@ public class YamsTest {
                 5, 1));
         assertEquals(40, dice);
     }
+
+    @Test
+    public void calcualteDiceValuesWithoutPatternRepetition() {
+        Yams yams = new Yams();
+        List<Map<Integer, Integer>> dice = List.of(Map.of(
+                1, 3,
+                3, 1,
+                4, 1),
+                Map.of(
+                1, 3,
+                3, 2)
+        );
+
+
+
+
+
+    }
+
+
+
+
 }
 
 

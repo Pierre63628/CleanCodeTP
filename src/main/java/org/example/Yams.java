@@ -15,7 +15,7 @@ public class Yams {
         "YAMS", 50
     );
 
-    public List<Map<Integer,Integer>> rollDice(int nbRoll) {
+    public List<Map<Integer,Integer>> rollDiceXTimes(int nbRoll) {
         List<Map<Integer, Integer>> dice = new ArrayList<>();
         for (int i = 0; i < nbRoll; i++) {
             dice.add(rollDice());
@@ -65,5 +65,6 @@ public class Yams {
             return sum;
         }
     }
+
 
 }
