@@ -27,6 +27,10 @@ public class Yams {
     }
 
     public Integer calculateScore(Map<Integer, Integer> dice) {
+        return extractPattern(dice);
+    }
+
+    public Integer extractPattern(Map<Integer, Integer> dice) {
         Integer sum = 0;
 
         if (dice.containsValue(2) && dice.containsValue(3)) {
@@ -50,9 +54,5 @@ public class Yams {
             return sum;
         }
     }
-
-
-
-
 
 }
