@@ -26,7 +26,7 @@ public class Yams {
         return  dice;
     }
 
-    public Integer diceValue(Map<Integer, Integer> dice) {
+    public Integer calcualteDiceValue(Map<Integer, Integer> dice) {
         Integer sum = 0;
 
         if (dice.containsValue(2) && dice.containsValue(3)) {
@@ -40,12 +40,14 @@ public class Yams {
         }
         if (dice.containsValue(5)) {
             return POSSIBLE_COMBINATIONS.get("YAMS");
-        }else {
+        }if (dice.size() == 5) {
+            return POSSIBLE_COMBINATIONS.get("GRANDE_SUITE");
+        }
+        else {
             for (Map.Entry<Integer, Integer> entry : dice.entrySet()) {
                 sum += entry.getKey();
             }
             return sum;
         }
-
-}
+    }
 }
