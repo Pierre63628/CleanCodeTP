@@ -1,5 +1,4 @@
 import org.example.Yams;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -30,8 +29,8 @@ public class YamsTest {
     @Test
     public  void testRollDiceValues2() {
         Yams yams = new Yams();
-        Integer dice = yams.diceValue(List.of(1, 2, 3, 4, 5));
-        assertEquals(15, dice);
+        Integer dice = yams.diceValue(Map.of(1, 3, 2, 2, 3, 1, 4, 1, 5, 1, 6, 1));
+        assertEquals(9, dice);
         }
     }
 

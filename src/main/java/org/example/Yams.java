@@ -1,11 +1,12 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Yams {
+
+
+
 
 
     public Map<Integer, Integer> rollDice() {
@@ -21,10 +22,10 @@ public class Yams {
         return  dice;
     }
 
-    public Integer diceValue(List<Integer> dice) {
-        int sum = 0;
-        for (Integer value : dice) {
-            sum += value;
+    public Integer diceValue(Map<Integer, Integer> dice) {
+        Integer sum = 0;
+        for (Map.Entry<Integer, Integer> entry : dice.entrySet()) {
+            sum += entry.getValue();
         }
         return sum;
     }
