@@ -3,6 +3,7 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -13,17 +14,17 @@ public class YamsTest {
     @Test
     public void testRollDice() {
         Yams yams = new Yams();
-        List<Integer> dice = yams.rollDice();
-        assertEquals(5, dice.size());
+        Map<Integer, Integer> dice = yams.rollDice();
+        assertTrue(dice.size() >= 1 && dice.size() <= 5);
     }
 
     @Test
     public void testRollDiceValues() {
         Yams yams = new Yams();
-        List<Integer> dice = yams.rollDice();
-        for (Integer value : dice) {
-            assertTrue(value >= 1 && value <= 6);
-        }
+        Map<Integer, Integer> dice = yams.rollDice();
+        dice.values().forEach(
+                value ->
+                        assertTrue(value >= 1 && value <= 6));
     }
 
     @Test
