@@ -26,7 +26,7 @@ public class Yams {
         return  dice;
     }
 
-    public Integer calcualteDiceValue(Map<Integer, Integer> dice) {
+    public Integer calculateScore(Map<Integer, Integer> dice) {
         Integer sum = 0;
 
         if (dice.containsValue(2) && dice.containsValue(3)) {
@@ -50,4 +50,9 @@ public class Yams {
             return sum;
         }
     }
+
+
+
+
+
 }
