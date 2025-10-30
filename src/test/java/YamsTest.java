@@ -1,12 +1,25 @@
 import org.example.Yams;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class YamsTest {
+
+
+    @Test
+    public void shouldReturnValidDiceCountWhenRollingMultipleTimes() {
+        Yams yams = new Yams();
+        List<Map<Integer, Integer>> dice = yams.rollDice(3);
+
+        assertThat(dice.size())
+                .as("Dice count should be between 1 and 5")
+                .isBetween(1, 5);
+    }
+
 
     @Test
     public void shouldReturnValidDiceCountWhenRolling() {

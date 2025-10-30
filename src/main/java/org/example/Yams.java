@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Yams {
@@ -12,6 +14,15 @@ public class Yams {
         "GRANDE_SUITE", 40,
         "YAMS", 50
     );
+
+    public List<Map<Integer,Integer>> rollDice(int nbRoll) {
+        List<Map<Integer, Integer>> dice = new ArrayList<>();
+        for (int i = 0; i < nbRoll; i++) {
+            dice.add(rollDice());
+        }
+        return  dice;
+    }
+
     //Map<Number,Interation>
     public Map<Integer, Integer> rollDice() {
         Map<Integer, Integer> dice = new HashMap<>();
