@@ -54,6 +54,23 @@ public class YamsTest {
         assertEquals(35, dice);
         }
 
+        @Test
+    public void testRollDiceValuesFull() {
+        Yams yams = new Yams();
+        Integer dice = yams.diceValue(Map.of(
+                1, 3,
+                2, 2));
+        assertEquals(30, dice);
+        }
+
+        @Test
+    public void testRollDicesValuesCarre() {
+        Yams yams = new Yams();
+        Integer dice = yams.diceValue(Map.of(
+                1, 4,
+                2, 1));
+        assertEquals(35, dice);
+        }
 }
 
 

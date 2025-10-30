@@ -28,23 +28,30 @@ public class Yams {
 
     public Integer diceValue(Map<Integer, Integer> dice) {
         Integer sum = 0;
-        if (dice.size() == 6){
+
+        if (dice.containsValue(2) && dice.containsValue(3)) {
+            return POSSIBLE_COMBINATIONS.get("FULL");
+        }
+        if (dice.containsValue(3)) {
+            return POSSIBLE_COMBINATIONS.get("BRELAN");
+        }
+        if (dice.containsValue(4)) {
+            return POSSIBLE_COMBINATIONS.get("CARRE");
+        }
+        if (dice.size() == 5) {
+            return POSSIBLE_COMBINATIONS.get("GRANDE_SUITE");
+        }
+        if (dice.containsValue(5)) {
+            return POSSIBLE_COMBINATIONS.get("YAMS");
+        }
+
+        if (dice.size() == 6) {
             for (Map.Entry<Integer, Integer> entry : dice.entrySet()) {
                 sum += entry.getValue();
             }
             return sum;
-        }if(dice.containsValue(3)){
-            return POSSIBLE_COMBINATIONS.get("BRELAN");
-        }if (dice.containsValue(4)){
-            return POSSIBLE_COMBINATIONS.get("CARRE");
         }
-
         return 0;
     }
-
-
-
-
-
 
 }
